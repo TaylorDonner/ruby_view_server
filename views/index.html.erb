@@ -2,10 +2,17 @@
 <p>
   The time is now:
   <%= Time.now %>
+
+  <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+  Hello there <%= @request.query['first_name'] %>
+<% else %>
+  Enter thy name
+<% end %>
+
 </p>
 
 <p>
   My Name is:
-  <%= @name %>
+  <%= @request.query['first_name'] %>
 </p>
 
